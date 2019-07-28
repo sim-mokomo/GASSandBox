@@ -65,3 +65,21 @@ class SlackService {
 
         return data["messages"]
     }
+
+    openDialog(dialogConstructorByJson, triggerId) {
+        var payload = {
+            token: this.token,
+            trigger_id: triggerId,
+            dialog: dialogConstructorByJson,
+        }
+
+        var params: GoogleAppsScript.URL_Fetch.URLFetchRequestOptions = {
+            method: "post",
+            payload : payload
+        }
+
+        const url = "https://slack.com/api/dialog.open"
+        const response = UrlFetchApp.fetch(url, params)
+        return response
+    }
+}
