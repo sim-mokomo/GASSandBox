@@ -5,6 +5,7 @@
 # GAS
 .clasp.json
 appsscript.json
+SecretConfig.ts
 
 ### Node ###
 # Logs
